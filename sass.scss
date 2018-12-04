@@ -1,0 +1,246 @@
+// variables
+
+$color-primary:#1da1f2;
+// $color-secondary:
+
+$color-text-dark: #14171a;
+$color-text-light: #fff;
+
+$color-yellow: #faffbd;
+$color-grey-light: rgba(153, 153, 153, 0.18);
+$color-grey: rgba(153, 153, 153,.9);
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+h1 {
+    visibility: hidden;
+    height: 0;
+}
+
+@mixin clearfix {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.left {
+    width: 50%;
+    float:left;
+    background-color: $color-primary;
+    background-size: cover;
+}
+
+.left__background {
+    background-image: url("https://upload.wikimedia.org/wikipedia/fr/thumb/c/c8/Twitter_Bird.svg/944px-Twitter_Bird.svg.png");
+    background-size: cover;
+    height: 100vh;
+    margin-left: 30%;
+    position: relative;
+}
+
+.info {
+    position: absolute;
+    top: 35%;
+    width: 100%;
+
+    i {
+        margin-right: 1rem;
+        font-size: 4rem;
+    }
+}
+
+.info1,
+.info2,
+.info3 {
+    display: block;
+    color: $color-text-light;
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 5rem;
+}
+
+.right {
+    float:right;
+    width: 50%;
+    padding: 3rem 2rem;
+}
+
+.infopanel {
+    margin-top: 17vh;
+    margin-left: 13vw;
+}
+
+.fa-twitter {
+    color: $color-primary;
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+}
+
+.infopanel__description {
+    font-weight: 700;
+    font-size: 2.7rem;
+    line-height: 3rem;
+    width: 35rem;
+    margin-bottom:6rem;
+}
+
+.infopanel__jointoday {
+    font-size: 1.7rem;
+}
+
+.btn {
+    display: block;
+    font-weight: 800;
+    width: 7.6rem;
+    height: 4.5rem;
+    margin-left: 1rem;
+    padding: 0;
+
+    &:hover {
+        background-color: lighten($color-primary, 40%);
+    }
+
+}
+
+.btn__login {
+    display: inline-block;
+    color: $color-primary;
+    border: .1rem solid $color-primary;
+    background-color: transparent;
+    padding: 1rem 1.5rem;
+    border-radius: 100rem;
+    outline: none;
+    transition: background-color .5s;
+}
+
+input {
+    height: 4.5rem;
+    border-radius:.5rem;
+    border: 1px solid $color-grey-light;
+    padding-left: .9rem;
+    width: 20rem;
+
+    &::placeholder {
+        color: $color-grey;
+    }
+
+    &:hover {
+        border: 1px solid $color-primary;
+    }
+
+    &:first-of-type {
+        margin-left: 13rem;
+    }
+
+    &:last-of-type {
+        margin-left: 1rem;
+    }
+
+    &:valid {
+        background-color: $color-yellow;
+    }
+}
+
+.btn__forgotpassword {
+    text-decoration: none;
+    color: $color-grey;
+    font-weight: 400;
+    font-size: 1.4rem;
+    width: 15rem;
+    margin-left: 34.5rem;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+@mixin links {
+    text-decoration: none;
+    font-size: 1.5rem;
+    width: 35rem;
+    border-radius: 100rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    display: block;
+    height: 3.5rem;
+    text-align: center;
+    vertical-align: center;
+    padding-top: .7rem;
+}
+
+.btn__signup {
+    @include links
+    margin-top: 1.5rem;
+
+    &:link,
+    &:visited {
+        color: $color-text-light;
+        background-color: $color-primary;
+    }
+
+    &:hover {
+        background-color: darken($color-primary, 15%);
+    }
+}
+
+.btn__loginsecondary {
+    @include links
+
+    &:link,
+    &:visited {
+        color: $color-primary;
+        border: 1px solid $color-primary;
+    }
+
+    &:hover {
+        background-color: lighten($color-primary, 42%);
+    }
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    background-color: $color-text-light;
+    height: 4.2rem;
+    width: 100vw;
+    border-top: 1px solid $color-grey-light;
+    text-align: center;
+    font-size: 1.2rem;
+    color: $color-grey;
+
+    .navigation {
+        padding-top: 1.2rem;
+        list-style-type: none; 
+
+        li {
+            display: inline-block;
+            margin-left: 1rem;
+
+            a:link,
+            a:visited {
+                color: $color-grey;
+                text-decoration:none;
+                padding-left: .5rem;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
