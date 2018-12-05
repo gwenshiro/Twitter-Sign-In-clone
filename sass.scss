@@ -38,19 +38,33 @@ h1 {
     display: table;
 }
 
+@mixin links {
+    text-decoration: none;
+    font-size: 1.5rem;
+    width: 35rem;
+    border-radius: 100rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    display: block;
+    height: 3.5rem;
+    text-align: center;
+    vertical-align: center;
+    padding-top: .7rem;
+}
+
 .left {
     width: 50%;
     float:left;
     background-color: $color-primary;
     background-size: cover;
-}
 
-.left__background {
-    background-image: url("https://upload.wikimedia.org/wikipedia/fr/thumb/c/c8/Twitter_Bird.svg/944px-Twitter_Bird.svg.png");
-    background-size: cover;
-    height: 100vh;
-    margin-left: 30%;
-    position: relative;
+    &__background {
+        background-image: url("https://upload.wikimedia.org/wikipedia/fr/thumb/c/c8/Twitter_Bird.svg/944px-Twitter_Bird.svg.png");
+        background-size: cover;
+        height: 100vh;
+        margin-left: 30%;
+        position: relative;
+    }
 }
 
 .info {
@@ -83,24 +97,24 @@ h1 {
 .infopanel {
     margin-top: 17vh;
     margin-left: 13vw;
+
+    &__description {
+        font-weight: 700;
+        font-size: 2.7rem;
+        line-height: 3rem;
+        width: 35rem;
+        margin-bottom:6rem;
+    }
+
+    &__jointoday {
+        font-size: 1.7rem;
+    }
 }
 
 .fa-twitter {
     color: $color-primary;
     font-size: 4.5rem;
     margin-bottom: 1rem;
-}
-
-.infopanel__description {
-    font-weight: 700;
-    font-size: 2.7rem;
-    line-height: 3rem;
-    width: 35rem;
-    margin-bottom:6rem;
-}
-
-.infopanel__jointoday {
-    font-size: 1.7rem;
 }
 
 .btn {
@@ -115,17 +129,60 @@ h1 {
         background-color: lighten($color-primary, 40%);
     }
 
-}
+    &__login {
+        display: inline-block;
+        color: $color-primary;
+        border: .1rem solid $color-primary;
+        background-color: transparent;
+        padding: 1rem 1.5rem;
+        border-radius: 100rem;
+        outline: none;
+        transition: background-color .5s;
+    }
 
-.btn__login {
-    display: inline-block;
-    color: $color-primary;
-    border: .1rem solid $color-primary;
-    background-color: transparent;
-    padding: 1rem 1.5rem;
-    border-radius: 100rem;
-    outline: none;
-    transition: background-color .5s;
+    &__forgotpassword {
+        text-decoration: none;
+        color: $color-grey;
+        font-weight: 400;
+        font-size: 1.4rem;
+        width: 15rem;
+        margin-left: 34.5rem;
+    
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+    
+    &__signup {
+        @include links
+        margin-top: 1.5rem;
+    
+        &:link,
+        &:visited {
+            color: $color-text-light;
+            background-color: $color-primary;
+        }
+    
+        &:hover {
+            background-color: darken($color-primary, 15%);
+        }
+    }
+    
+    &__loginsecondary {
+        @include links
+    
+        &:link,
+        &:visited {
+            color: $color-primary;
+            border: 1px solid $color-primary;
+        }
+    
+        &:hover {
+            background-color: lighten($color-primary, 42%);
+        }
+    }
+
 }
 
 input {
@@ -156,61 +213,6 @@ input {
     }
 }
 
-.btn__forgotpassword {
-    text-decoration: none;
-    color: $color-grey;
-    font-weight: 400;
-    font-size: 1.4rem;
-    width: 15rem;
-    margin-left: 34.5rem;
-
-    &:hover {
-        text-decoration: underline;
-    }
-}
-
-@mixin links {
-    text-decoration: none;
-    font-size: 1.5rem;
-    width: 35rem;
-    border-radius: 100rem;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-    display: block;
-    height: 3.5rem;
-    text-align: center;
-    vertical-align: center;
-    padding-top: .7rem;
-}
-
-.btn__signup {
-    @include links
-    margin-top: 1.5rem;
-
-    &:link,
-    &:visited {
-        color: $color-text-light;
-        background-color: $color-primary;
-    }
-
-    &:hover {
-        background-color: darken($color-primary, 15%);
-    }
-}
-
-.btn__loginsecondary {
-    @include links
-
-    &:link,
-    &:visited {
-        color: $color-primary;
-        border: 1px solid $color-primary;
-    }
-
-    &:hover {
-        background-color: lighten($color-primary, 42%);
-    }
-}
 
 .footer {
     position: fixed;
@@ -223,7 +225,7 @@ input {
     font-size: 1.2rem;
     color: $color-grey;
 
-    .navigation {
+    &__navigation {
         padding-top: 1.2rem;
         list-style-type: none; 
 
